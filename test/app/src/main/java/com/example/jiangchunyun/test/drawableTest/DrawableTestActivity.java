@@ -1,10 +1,8 @@
 package com.example.jiangchunyun.test.drawableTest;
-
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
-
 import com.example.jiangchunyun.test.R;
 
 public class DrawableTestActivity extends AppCompatActivity {
