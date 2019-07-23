@@ -1,5 +1,6 @@
 package com.example.jiangchunyun.test.animatorSetTest;
 
+import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ public class AnimatorSetActivity extends AppCompatActivity {
     private void initView(){
         setContentView(R.layout.activity_animator_set_test);
         mTvTitle=findViewById(R.id.TV_title);
-        setAnimation(mTvTitle);
+        setAnimationXml(mTvTitle);
     }
 
     private void setAnimation(TextView textView){
@@ -31,6 +32,12 @@ public class AnimatorSetActivity extends AppCompatActivity {
         AnimatorSet animatorSet=new AnimatorSet();
         animatorSet.play(objectAnimator2).with(objectAnimator1).after(objectAnimator3);
         animatorSet.setDuration(5000);
+        animatorSet.start();
+    }
+
+    private void setAnimationXml(TextView textView){
+        AnimatorSet animatorSet= (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.animator_set_test);
+        animatorSet.setTarget(textView);
         animatorSet.start();
     }
 }
