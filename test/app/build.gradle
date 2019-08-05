@@ -16,6 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -25,4 +30,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //For Lifecycles, LiveData, and ViewModel
+    implementation "android.arch.lifecycle:runtime:1.0.0-alpha2"
+    implementation "android.arch.lifecycle:extensions:1.0.0-alpha2"
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha2"
+
+    //For Room
+    implementation "android.arch.persistence.room:runtime:1.0.0-alpha2"
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0-alpha2"
+    implementation 'org.jetbrains:annotations:15.0'
 }
